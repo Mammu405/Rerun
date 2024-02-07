@@ -1,0 +1,172 @@
+{% extends "headerfooter.html "%}
+{% block content %}
+
+        <!-- Begin Quicky's Breadcrumb Area -->
+        <!-- <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <h2>Shop Related Page</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+        <!-- Quicky's Breadcrumb Area End Here -->
+
+        <!-- Begin Quicky's Cart Area -->
+        <div class="quicky-cart-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="javascript:void(0)">
+                            <div class="table-content table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="quicky-product-remove">SL NO</th>
+                                            <th class="cart-product-name">SELLER NAME</th>
+                                            <th class="quicky-product-price">PRODUCT NAME</th>
+                                            <th class="quicky-product-thumbnail">PRODUCT IMAGE</th>
+                                            <th class="quicky-product-quantity">DATE</th>
+                                            <th class="quicky-product-quantity">AMOUNT</th>
+                                            <th class="quicky-product-subtotal">STATUS</th>
+                                            <th class="quicky-product-subtotal">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for x in dataset %}
+                                        <tr>
+                                            <td class="quicky-product-remove">{{forloop.counter}}</td>
+                                            <td class="quicky-product-remove">{{x.Seller.Fname}}</td>
+                                        <!--     <td class="quicky-product-name"><a href="javascript:void(0)">{{x.Seller.Name}}</a></td> -->
+                                            <td class="quicky-product-remove">{{x.Free_details.Title}}</td>
+                                            <td><img src="{{x.Free_details.File.url}}" alt="Quicky's Cart Thumbnail" width="120" height="120"></td>
+                                            <td class="product-subtotal">{{x.Date}}</td>
+                                            <td class="product-subtotal">{{x.Free_details.Price}}</td>
+                                            {% if x.Status == "Pending" and x.Free_details.Status == "Sold Out" %}
+                                            <td class="product-subtotal">{{x.Free_details.Status}}</td>
+                                            {% else %}
+                                            <td class="product-subtotal">{{x.Status}}</td>
+                                            {% endif %}
+
+                                            {% if x.Status == "Pending" and x.Free_details.Status == "Pending" %}
+                                            <td class="quicky-product-remove"><button><a href="/booking/?id={{x.id}}" class="btn btn-secondary">Booking</a></button></td>
+                                            {% else %}
+                                            <td>
+        </td>
+                                            {% endif %}
+                                        </tr>
+                                          {% endfor %}
+                                       <!--  <tr>
+                                            <td class="quicky-product-remove"><a href="javascript:void(0)"><i class="zmdi zmdi-close"
+                                                title="Remove"></i></a></td>
+                                            <td class="quicky-product-thumbnail"><a href="javascript:void(0)"><img src="/static/images/product/small-size/2.jpg" alt="Quicky's Cart Thumbnail"></a></td>
+                                            <td class="quicky-product-name"><a href="javascript:void(0)">Bag Goodscol model</a></td>
+                                            <td class="quicky-product-price"><span class="amount">$71.80</span></td>
+                                            <td class="quantity">
+                                                <label>Quantity</label>
+                                                <div class="cart-plus-minus">
+                                                    <input class="cart-plus-minus-box" value="1" type="text">
+                                                    <div class="dec qtybutton"><i class="zmdi zmdi-chevron-down"></i></div>
+                                                    <div class="inc qtybutton"><i class="zmdi zmdi-chevron-up"></i></div>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal"><span class="amount">$71.80</span></td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                          <!--   <div class="row">
+                                <div class="col-12">
+                                    <div class="coupon-all">
+                                        <div class="coupon">
+                                            <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
+                                            <input class="button mt-xxs-30" name="apply_coupon" value="Apply coupon" type="submit">
+                                        </div>
+                                        <div class="coupon2">
+                                            <input class="button" name="update_cart" value="Update cart" type="submit">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                      <!--       <div class="row">
+                                <div class="col-md-5 ml-auto">
+                                    <div class="cart-page-total">
+                                        <h2>Cart totals</h2>
+                                        <ul>
+                                            <li>Subtotal <span>$118.60</span></li>
+                                            <li>Total <span>$118.60</span></li>
+                                        </ul>
+                                        <a href="javascript:void(0)">Proceed to checkout</a>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quicky's Cart Area End Here -->
+
+        <!-- Begin Brand Area -->
+        <div class="brand-area pb-95">
+            <div class="container">
+                <div class="brand-nav">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="quicky-element-carousel brand-slider" data-slick-options='{
+                                "slidesToShow": 4,
+                                "slidesToScroll": 1,
+                                "infinite": true,
+                                "arrows": false,
+                                "dots": false,
+                                "spaceBetween": 30
+                                }' data-slick-responsive='[
+                                {"breakpoint":992, "settings": {
+                                "slidesToShow": 3
+                                }},
+                                {"breakpoint":768, "settings": {
+                                "slidesToShow": 2
+                                }},
+                                {"breakpoint":575, "settings": {
+                                "slidesToShow": 2
+                                }}
+                            ]'>
+
+                                <div class="brand-item">
+                                    <a href="javascript:void(0)">
+                                        <img src="/static/images/brand/5.png" alt="Quicky's Brand">
+                                    </a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="javascript:void(0)">
+                                        <img src="/static/images/brand/6.png" alt="Quicky's Brand">
+                                    </a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="javascript:void(0)">
+                                        <img src="/static/images/brand/7.png" alt="Quicky's Brand">
+                                    </a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="javascript:void(0)">
+                                        <img src="/static/images/brand/8.png" alt="Quicky's Brand">
+                                    </a>
+                                </div>
+                                <div class="brand-item">
+                                    <a href="javascript:void(0)">
+                                        <img src="/static/images/brand/5.png" alt="Quicky's Brand">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Brand Area End Here -->
+
+     {% endblock %}

@@ -1,0 +1,103 @@
+{% extends "admin/headerfooter.html "%}
+{% block content %}
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <!-- <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                    
+                                </ol>
+                            </div> -->
+                            <h4 class="page-title">Category add Form</h4>
+                        </div>
+                    </div>
+                </div>     
+                <!-- end page title -->
+
+                
+
+                <div class="row">
+                    
+
+                   
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mb-3 header-title">Horizontal form</h4>
+
+                                <form action="/categories/" method="post" class="form-horizontal">
+                                    {% csrf_token %}
+                                    <div class="row mb-3">
+                                        <label for="inputEmail3" class="col-4 col-xl-3 col-form-label">Category</label>
+                                        <div class="col-8 col-xl-9">
+                                            <input type="text" class="form-control" id="inputEmail3"
+                                                placeholder="Product name" name="list">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row mb-3">
+                                        <label for="inputPassword3"
+                                            class="col-4 col-xl-3 col-form-label">Password</label>
+                                        <div class="col-8 col-xl-9">
+                                            <input type="password" class="form-control" id="inputPassword3"
+                                                placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPassword5" class="col-4 col-xl-3 col-form-label">Re
+                                            Password</label>
+                                        <div class="col-8 col-xl-9">
+                                            <input type="password" class="form-control" id="inputPassword5"
+                                                placeholder="Retype Password">
+                                        </div>
+                                    </div> -->
+                                   <!--  <div class="row mb-3 justify-content-end">
+                                        <div class="col-8 col-xl-9">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="checkmeout">
+                                                <label class="form-check-label" for="checkmeout">Check me out !</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="justify-content-end row">
+                                        <div class="col-8 col-xl-9">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">ADD</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card -->
+                    </div> <!-- end col -->
+
+                </div>
+                <!-- end row -->
+
+
+                
+                <!-- end row -->
+
+
+                
+
+                
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+
+  {% endblock %}

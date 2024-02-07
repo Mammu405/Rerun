@@ -1,0 +1,82 @@
+{% extends "admin/headerfooter.html "%}
+{% block content %}
+
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <!-- <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                                            <li class="breadcrumb-item active">Responsive Table</li>
+                                        </ol>
+                                    </div> -->
+                                    <h4 class="page-title">Product List Table</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="responsive-table-plugin">
+                                            <div class="table-rep-plugin">
+                                                <div class="table-responsive" data-pattern="priority-columns">
+                                                    <table id="tech-companies-1" class="table table-striped">
+                                                        <thead>
+                                                        <tr>
+                                                            <!-- <th>Company</th> -->
+                                                            <th data-priority="1">SL NO</th>
+                                                            <th data-priority="6">NAME</th>
+                                                            <th data-priority="3">EMAIL</th>
+                                                            <th data-priority="6">SUBJECT</th>
+                                                            <th data-priority="1">FEEDBACK</th>
+                                                            
+                                                            <!-- <th data-priority="6">1y Target Est</th> -->
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                             {% for x in dataset %}
+                                                        <tr>
+                                                            <th>{{forloop.counter}}<!-- <span class="co-name">Google Inc.</span> --></th>
+                                                            
+                                                            <td>{{x.Name}}</td>
+                                                            <td>{{x.Email}}</td>
+                                                            <td>{{x.Subject}}</td>
+                                                            <td>{{x.Feedback}}</td>
+                                                        
+                                                          <!--   <td>{{x.Name}}</td> -->
+                                                            <!-- <td>731.10</td> -->
+                                                        </tr>
+                                                       {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div> <!-- end .table-responsive -->
+        
+                                            </div> <!-- end .table-rep-plugin-->
+                                        </div> <!-- end .responsive-table-plugin-->
+                                    </div>
+                                </div> <!-- end card -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+        {% endblock %}         
